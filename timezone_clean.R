@@ -1,4 +1,6 @@
 #setwd ("D:/ssda job")
+#install.packages("sjmisc")
+library(sjmisc)
 library(tidyverse)
 
 ssda <- read.csv("ssda_tz_0.csv", header= T, na.strings=c(""," ","NA"))
