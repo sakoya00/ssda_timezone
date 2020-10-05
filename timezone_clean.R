@@ -23,3 +23,7 @@ ssda_tib %>%
     mutate(N=n()) %>%
     ungroup() %>% 
     filter(N==max(N))
+
+ssda_tib %>%
+    group_by(bin) %>%
+    summarise(test_sum=sum(fraction_of_followers))
