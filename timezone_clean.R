@@ -22,6 +22,8 @@ ssda_tib <- ssda_tib %>%
             group_by(bin) %>%
             mutate(N=n())%>%
             mutate(weight_by_followers=sum(fraction_of_followers))%>%
-            summarise(adjusted_weight=N*weight_by_followers)
+            summarise(adjusted_weight=N*weight_by_followers) %>%
+            distinct()
+
 write.csv(ssda_tib, "ssda_weight.csv")
       
