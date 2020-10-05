@@ -13,3 +13,4 @@ ssda_tib$bin= cut(ssda_tib$last_tweeted_at_GMT, c(000000, 010000,020000,030000,0
                                                   120000,130000, 140000, 150000, 160000,170000, 
                                                   180000, 190000, 200000, 210000, 220000, 230000, 
                                                   240000))       
+sum_followers <- sum(ssda_tib$followers_count)
