@@ -8,7 +8,7 @@ sum_followers <- sum(ssda_tib$followers_count)
 ssda_tib <- ssda_tib %>%
 mutate(last_tweeted_at_GMT= substr(last_tweeted_at_GMT,12,19)) %>%
 mutate(last_tweeted_at_GMT= as.numeric(gsub(":", "", ssda_tib$last_tweeted_at_GMT))) %>%
-mutate(fraction_of_followers= ssda_tib$last_tweeted_at_GMT/sum_followers)
+mutate(fraction_of_followers= ssda_tib$followers_count/sum_followers)
 ssda_tib <- na.omit(ssda_tib)
 ssda_tib$bin= cut(ssda_tib$last_tweeted_at_GMT, c(000000, 010000,020000,030000,040000,050000,
                                                   060000,070000,080000,090000,100000,110000,
